@@ -21,6 +21,24 @@
 			"revisionTime": "2016-04-14T23:39:28Z"
 		},
 		{
+			"checksumSHA1": "pcOdY6zOlIYt+MBeMcNBXm/7r4w=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "5caaac4c5c712a9e7a7de29e6c24ef46c753017f",
+			"revisionTime": "2016-04-14T23:39:28Z"
+		},
+		{
+			"checksumSHA1": "JZFug7lNke4UI4TiJnW4Ra2Y5wk=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "df1d3ca07d2d07bba352d5b73c4313b4e2a6203e",
+			"revisionTime": "2016-09-27T20:09:49Z"
+		},
+		{
+			"checksumSHA1": "MkWZiVGFCx8xuyIFygL7bOvKK2g=",
+			"path": "github.com/manucorporat/sse",
+			"revision": "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d",
+			"revisionTime": "2016-01-26T18:01:36Z"
+		},
+		{
 			"checksumSHA1": "RZOdTSZN/PgcTqko5LzIAzw+UT4=",
 			"path": "github.com/pmezard/go-difflib/difflib",
 			"revision": "792786c7400a136282c1664665ae0a8db921c6c2",
@@ -31,6 +49,24 @@
 			"path": "github.com/stretchr/testify/assert",
 			"revision": "976c720a22c8eb4eb6a0b4348ad85ad12491a506",
 			"revisionTime": "2016-09-25T22:06:09Z"
+		},
+		{
+			"checksumSHA1": "88lxkrVVZyBqOBOFnNMBwEexiLY=",
+			"path": "golang.org/x/net/context",
+			"revision": "2a824cf9226006580a06d9fa8f10901c17b49ed5",
+			"revisionTime": "2016-10-04T01:30:31Z"
+		},
+		{
+			"checksumSHA1": "zBJo+aaK9GeFIUHftzL6CyxtYf0=",
+			"path": "gopkg.in/go-playground/assert.v1",
+			"revision": "4f4dfbc7d1c48336cf93399deae81aa9067e88af",
+			"revisionTime": "2016-02-05T15:04:13Z"
+		},
+		{
+			"checksumSHA1": "24wxwYO57BWvjPPSmCmWNFmmkv8=",
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": "5f57d2222ad794d0dffb07e664ea05e2ee07d60c",
+			"revisionTime": "2016-07-18T13:41:25Z"
 		}
 	],
 	"rootPath": "revised-server"
