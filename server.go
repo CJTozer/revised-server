@@ -23,7 +23,7 @@ func main() {
     router := gin.Default()
 
     // Data API (TODO)
-    api := router.Group("/v1/data")
+    api := router.Group("/v1")
     {
         api.GET("/books", func(c *gin.Context) {
             c.JSON(http.StatusOK, []Book{
