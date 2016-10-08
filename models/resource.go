@@ -15,6 +15,10 @@ swagger:model Resource
 */
 type Resource struct {
 
+	/* The resource's ID
+	 */
+	ResourceID float64 `json:"resource_id,omitempty"`
+
 	/* The type of resource
 	 */
 	ResourceType string `json:"resource_type,omitempty"`
