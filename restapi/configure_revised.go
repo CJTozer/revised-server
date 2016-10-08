@@ -57,7 +57,7 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 		if params.ID - 1 <= int64(len(resList)) {
 			return resources.NewGetResourcesIDOK().WithPayload(resList[params.ID])
 		}
-		return resources.GetResourcesIDDefault(404)
+		return resources.NewGetResourcesIDDefault(404)
 	})
 
 	api.ServerShutdown = func() {}
