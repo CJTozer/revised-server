@@ -55,7 +55,7 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 		// Dummy response for now
 		resList := backend.DummyResourcesList()
 		if params.ID - 1 <= int64(len(resList)) {
-			return resources.NewGetResourcesIDOK().WithPayload(resList[params.ID])
+			return resources.NewGetResourcesIDOK().WithPayload(resList[params.ID - 1])
 		}
 		return resources.NewGetResourcesIDDefault(404)
 	})
