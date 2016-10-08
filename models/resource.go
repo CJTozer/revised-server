@@ -18,6 +18,7 @@ type Resource struct {
 	/* The resource's ID
 	 */
 	ResourceID float64 `json:"resource_id,omitempty"`
+	// @@@ Need this to be an int
 
 	/* The type of resource
 	 */

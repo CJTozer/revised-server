@@ -23,6 +23,7 @@ type Book struct {
 	/* Unique identifier for the book.
 	 */
 	BookID float64 `json:"book_id,omitempty"`
+	// @@@ Need this to be an int
 
 	/* resources
 	 */

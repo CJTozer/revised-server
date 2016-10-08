@@ -11,6 +11,7 @@ import (
 
 	"revised-server/restapi/operations"
 	"revised-server/restapi/operations/books"
+	"revised-server/restapi/operations/resources"
 
 	"revised-server/backend"
 )
@@ -40,6 +41,11 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 	api.BooksGetBooksHandler = books.GetBooksHandlerFunc(func(params books.GetBooksParams) middleware.Responder {
 		// Dummy response for now
 		return books.NewGetBooksOK().WithPayload(backend.DummyBooksList())
+	})
+
+	api.ResourcesGetResourcesHandler = resources.GetResourcesHandlerFunc(func(params resources.GetResourcesParams) middleware.Responder {
+		// Dummy response for now
+		return resources.NewGetResourcesOK().WithPayload(backend.DummyResourcesList())
 	})
 
 	api.ServerShutdown = func() {}
