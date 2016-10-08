@@ -3,6 +3,12 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "BdLdZP/C2uOO3lqk9X3NCKFpXa4=",
+			"path": "github.com/asaskevich/govalidator",
+			"revision": "7b3beb6df3c42abd3509abfc3bcacc0fbfb7c877",
+			"revisionTime": "2016-10-01T16:31:30Z"
+		},
+		{
 			"checksumSHA1": "JCqkH6veCcAx3BOrjXTOHew31d0=",
 			"path": "github.com/go-openapi/analysis",
 			"revision": "b44dc874b601d9e4e2f6e19140e794ba24bead3b",
@@ -13,6 +19,18 @@
 			"path": "github.com/go-openapi/errors",
 			"revision": "4178436c9f2430cdd945c50301cfb61563b56573",
 			"revisionTime": "2016-08-30T19:04:10Z"
+		},
+		{
+			"checksumSHA1": "Au2qpfa4VkYqoEUjkd+pAzyL2cc=",
+			"path": "github.com/go-openapi/jsonpointer",
+			"revision": "46af16f9f7b149af66e5d1bd010e3574dc06de98",
+			"revisionTime": "2016-07-04T18:59:06Z"
+		},
+		{
+			"checksumSHA1": "jzzeiYHpHiEhmBNVQlBFw5Knvh0=",
+			"path": "github.com/go-openapi/jsonreference",
+			"revision": "13c6e3589ad90f49bd3e3bbe2c2cb3d7a4142272",
+			"revisionTime": "2016-07-04T19:01:45Z"
 		},
 		{
 			"checksumSHA1": "q075Xkfl6NZBfoF8N07/Oym0648=",
@@ -91,6 +109,18 @@
 			"path": "github.com/jessevdk/go-flags",
 			"revision": "4cc2832a6e6d1d3b815e2b9d544b2a4dfb3ce8fa",
 			"revisionTime": "2016-09-03T11:31:22Z"
+		},
+		{
+			"checksumSHA1": "NoYAAIWg/UuYk27qgb7d0tfEym0=",
+			"path": "github.com/mailru/easyjson/jlexer",
+			"revision": "2ea6ed0ea8d20091ff80b30ab47e206e776e7c53",
+			"revisionTime": "2016-10-07T12:52:17Z"
+		},
+		{
+			"checksumSHA1": "sP9qwMRDIMFDDHocXf6H1CKNrME=",
+			"path": "github.com/mailru/easyjson/jwriter",
+			"revision": "2ea6ed0ea8d20091ff80b30ab47e206e776e7c53",
+			"revisionTime": "2016-10-07T12:52:17Z"
 		},
 		{
 			"checksumSHA1": "XHelZPsZOVFutaCm/UJMITvfGSM=",
