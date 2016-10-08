@@ -23,11 +23,6 @@ func main() {
 
 	api := operations.NewRevisedAPI(swaggerSpec)
 	server := restapi.NewServer(api)
-	port, err := strconv.Atoi(os.Getenv("PORT"))
-	if err != nil {
-		log.Fatalln(err)
-	}
-	server.Port = port
 	defer server.Shutdown()
 
 	parser := flags.NewParser(server, flags.Default)
@@ -54,6 +49,13 @@ func main() {
 
 	server.ConfigureAPI()
 
+	// Serve the API as directed by the environment (and don't specify the host)
+	port, err := strconv.Atoi(os.Getenv("PORT"))
+	if err != nil {
+		log.Fatalln(err)
+	}
+	server.Port = port
+	server.Host = ""
 	if err := server.Serve(); err != nil {
 		log.Fatalln(err)
 	}
