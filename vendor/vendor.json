@@ -1,6 +1,51 @@
 {
 	"comment": "",
 	"ignore": "test",
-	"package": [],
+	"package": [
+		{
+			"checksumSHA1": "qdDVSYjJg4Z0RCOMN+H8THb7VgM=",
+			"path": "github.com/go-openapi/errors",
+			"revision": "4178436c9f2430cdd945c50301cfb61563b56573",
+			"revisionTime": "2016-08-30T19:04:10Z"
+		},
+		{
+			"checksumSHA1": "q075Xkfl6NZBfoF8N07/Oym0648=",
+			"path": "github.com/go-openapi/loads",
+			"revision": "18441dfa706d924a39a030ee2c3b1d8d81917b38",
+			"revisionTime": "2016-07-04T18:54:40Z"
+		},
+		{
+			"checksumSHA1": "JaOQ9XoZ1uRIs0LrZwtyk+CliBA=",
+			"path": "github.com/go-openapi/runtime",
+			"revision": "f6c2edcf343b34428165fe02674524a1977cad9e",
+			"revisionTime": "2016-10-04T14:21:06Z"
+		},
+		{
+			"path": "github.com/go-openapi/runtime/go-flags",
+			"revision": ""
+		},
+		{
+			"path": "github.com/go-openapi/runtime/graceful",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "P2/9FsPXcSBZL3QVgOvhPgAHCms=",
+			"path": "github.com/go-openapi/runtime/middleware",
+			"revision": "f6c2edcf343b34428165fe02674524a1977cad9e",
+			"revisionTime": "2016-10-04T14:21:06Z"
+		},
+		{
+			"path": "github.com/go-openapi/runtime/spec",
+			"revision": ""
+		},
+		{
+			"path": "github.com/go-openapi/runtime/strfmt",
+			"revision": ""
+		},
+		{
+			"path": "github.com/go-openapi/runtime/swag",
+			"revision": ""
+		}
+	],
 	"rootPath": "revised-server"
 }
