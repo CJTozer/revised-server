@@ -29,6 +29,25 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
+  /resources:
+    get:
+      summary: Resources
+      description: |
+        The Resources endpoint returns information about all the resources
+        for any books on reVISed.
+      tags:
+        - Resources
+      responses:
+        200:
+          description: An array of resources
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Resource'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
 definitions:
   Book:
     type: object
@@ -49,6 +68,9 @@ definitions:
   Resource:
     type: object
     properties:
+      resource_id:
+        type: number
+        description: The resource's ID
       resource_type:
         type: string
         description: The type of resource
