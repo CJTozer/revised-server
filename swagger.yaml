@@ -5,6 +5,7 @@ info:
   version: "1.0.0"
 host: revised-server.herokuapp.com
 schemes:
+  - http
   - https
 basePath: /v1
 produces:
