@@ -9,6 +9,12 @@
 			"revisionTime": "2016-07-28T01:56:03Z"
 		},
 		{
+			"checksumSHA1": "pvmScnaMFuAVLTxxOWjhGZBgPkg=",
+			"path": "github.com/PuerkitoBio/urlesc",
+			"revision": "5bd2802263f21d8788851d5305584c82a5c75d7e",
+			"revisionTime": "2016-07-26T15:08:25Z"
+		},
+		{
 			"checksumSHA1": "BdLdZP/C2uOO3lqk9X3NCKFpXa4=",
 			"path": "github.com/asaskevich/govalidator",
 			"revision": "7b3beb6df3c42abd3509abfc3bcacc0fbfb7c877",
@@ -145,6 +151,24 @@
 			"path": "golang.org/x/net/context",
 			"revision": "f4b625ec9b21d620bb5ce57f2dfc3e08ca97fce6",
 			"revisionTime": "2016-10-05T16:48:53Z"
+		},
+		{
+			"checksumSHA1": "GIGmSrYACByf5JDIP9ByBZksY80=",
+			"path": "golang.org/x/net/idna",
+			"revision": "f4b625ec9b21d620bb5ce57f2dfc3e08ca97fce6",
+			"revisionTime": "2016-10-05T16:48:53Z"
+		},
+		{
+			"checksumSHA1": "nG9vEHw/JENn++gQyd9D08RoOO4=",
+			"path": "golang.org/x/text/secure/precis",
+			"revision": "ede1cb9f9f2f84c3bace9ca113fd740fc916cdd0",
+			"revisionTime": "2016-09-29T15:02:56Z"
+		},
+		{
+			"checksumSHA1": "Aj3JSVO324FCjEAGm4ZwmC79bbo=",
+			"path": "golang.org/x/text/unicode/norm",
+			"revision": "ede1cb9f9f2f84c3bace9ca113fd740fc916cdd0",
+			"revisionTime": "2016-09-29T15:02:56Z"
 		}
 	],
 	"rootPath": "revised-server"
