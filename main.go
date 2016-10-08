@@ -13,9 +13,9 @@ import (
 )
 
 // For swagger generation, it always overrides restapi/configure_revised.go, which we don't want
-// to happen.  After much ado, simplest workaround is just to revert that file.
+// to happen.  After much ado, simplest workaround is just to warn about it.
 //go:generate swagger generate server --spec swagger.yaml --exclude-main
-//go:generate git checkout -- restapi/configure_revised.go
+//go:generate echo You probably don't want to commit the changes to restapi/configure_revised.go
 
 func main() {
 	swaggerSpec, err := loads.Analyzed(restapi.SwaggerJSON, "")
