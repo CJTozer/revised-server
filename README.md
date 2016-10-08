@@ -6,4 +6,4 @@
 
 ## Development
 
-* Use `govendor fetch ...` to get new dependencies - this saves untangling the dependency chain later when you were inadvertently relying on globally-installed packages.
+* Use `govendor fetch ...` (or e.g. `govendor fetch +m`) to get new dependencies - this saves untangling the dependency chain later when you were inadvertently relying on globally-installed packages.
