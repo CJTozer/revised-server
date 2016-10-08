@@ -38,14 +38,26 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 
 	api.JSONProducer = runtime.JSONProducer()
 
+	// Get the full list of books
 	api.BooksGetBooksHandler = books.GetBooksHandlerFunc(func(params books.GetBooksParams) middleware.Responder {
 		// Dummy response for now
 		return books.NewGetBooksOK().WithPayload(backend.DummyBooksList())
 	})
 
+	// Get the full list of resources
 	api.ResourcesGetResourcesHandler = resources.GetResourcesHandlerFunc(func(params resources.GetResourcesParams) middleware.Responder {
 		// Dummy response for now
 		return resources.NewGetResourcesOK().WithPayload(backend.DummyResourcesList())
+	})
+
+	// Get the resource with a specific ID
+	api.ResourcesGetResourcesIDHandler = resources.GetResourcesIDHandlerFunc(func(params resources.GetResourcesIDParams) middleware.Responder {
+		// Dummy response for now
+		resList := backend.DummyResourcesList()
+		if params.ID - 1 <= int64(len(resList)) {
+			return resources.NewGetResourcesIDOK().WithPayload(resList[params.ID])
+		}
+		return resources.GetResourcesIDDefault(404)
 	})
 
 	api.ServerShutdown = func() {}
