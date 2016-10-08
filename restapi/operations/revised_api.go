@@ -49,6 +49,8 @@ type RevisedAPI struct {
 	BooksGetBooksHandler books.GetBooksHandler
 	// ResourcesGetResourcesHandler sets the operation handler for the get resources operation
 	ResourcesGetResourcesHandler resources.GetResourcesHandler
+	// ResourcesGetResourcesIDHandler sets the operation handler for the get resources ID operation
+	ResourcesGetResourcesIDHandler resources.GetResourcesIDHandler
 
 	// ServeError is called when an error is received, there is a default handler
 	// but you can set your own with this
@@ -118,6 +120,10 @@ func (o *RevisedAPI) Validate() error {
 
 	if o.ResourcesGetResourcesHandler == nil {
 		unregistered = append(unregistered, "resources.GetResourcesHandler")
+	}
+
+	if o.ResourcesGetResourcesIDHandler == nil {
+		unregistered = append(unregistered, "resources.GetResourcesIDHandler")
 	}
 
 	if len(unregistered) > 0 {
@@ -211,6 +217,11 @@ func (o *RevisedAPI) initHandlerCache() {
 		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
 	}
 	o.handlers["GET"]["/resources"] = resources.NewGetResources(o.context, o.ResourcesGetResourcesHandler)
+
+	if o.handlers["GET"] == nil {
+		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
+	}
+	o.handlers["GET"]["/resources/{id}"] = resources.NewGetResourcesID(o.context, o.ResourcesGetResourcesIDHandler)
 
 }
 

@@ -9,17 +9,27 @@ return []*models.Resource{
         &models.Resource{
             ResourceID: 1,
             ResourceType: "Link",
-            Text: "Link to a photo",
+            Text: "Resource A",
         },
         &models.Resource{
             ResourceID: 2,
             ResourceType: "Link",
-            Text: "Link to another photo",
+            Text: "Resource B",
         },
         &models.Resource{
             ResourceID: 3,
             ResourceType: "Link",
-            Text: "Link to a map",
+            Text: "Resource C",
+        },
+        &models.Resource{
+            ResourceID: 4,
+            ResourceType: "Link",
+            Text: "Resource D",
+        },
+        &models.Resource{
+            ResourceID: 5,
+            ResourceType: "Link",
+            Text: "Resource E",
         },
     }
 }

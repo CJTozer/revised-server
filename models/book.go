@@ -22,12 +22,11 @@ type Book struct {
 
 	/* Unique identifier for the book.
 	 */
-	BookID float64 `json:"book_id,omitempty"`
-	// @@@ Need this to be an int
+	BookID int64 `json:"book_id,omitempty"`
 
-	/* resources
+	/* IDs for resources linked to this book.
 	 */
-	Resources []*Resource `json:"resources,omitempty"`
+	Resources []int64 `json:"resources,omitempty"`
 
 	/* Book title.
 	 */
@@ -53,21 +52,6 @@ func (m *Book) validateResources(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Resources) { // not required
 		return nil
-	}
-
-	for i := 0; i < len(m.Resources); i++ {
-
-		if swag.IsZero(m.Resources[i]) { // not required
-			continue
-		}
-
-		if m.Resources[i] != nil {
-
-			if err := m.Resources[i].Validate(formats); err != nil {
-				return err
-			}
-		}
-
 	}
 
 	return nil
