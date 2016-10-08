@@ -12,7 +12,7 @@ import (
 	"revised-server/restapi/operations"
 )
 
-//go:generate swagger generate server --spec swagger.yaml --skip-support
+//go:generate swagger generate server --spec swagger.yaml
 
 func main() {
 	swaggerSpec, err := loads.Analyzed(restapi.SwaggerJSON, "")

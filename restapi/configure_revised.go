@@ -9,10 +9,10 @@ import (
 	runtime "github.com/go-openapi/runtime"
 	middleware "github.com/go-openapi/runtime/middleware"
 
-	"revised-server/models"
-
 	"revised-server/restapi/operations"
 	"revised-server/restapi/operations/books"
+
+	"revised-server/backend"
 )
 
 // This file is safe to edit. Once it exists it will not be overwritten
@@ -39,25 +39,7 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 
 	api.BooksGetBooksHandler = books.GetBooksHandlerFunc(func(params books.GetBooksParams) middleware.Responder {
 		// Dummy response for now
-		booksList := []*models.Book{
-			&models.Book{
-				Author: "Dava Sobel",
-				BookID: 1,
-				Title:  "Longitude",
-			},
-			&models.Book{
-				Author: "Robert K. Massie",
-				BookID: 2,
-				Title:  "Peter The Great",
-			},
-			&models.Book{
-				Author: "Don Oberdorfer",
-				BookID: 3,
-				Title:  "The Two Koreas",
-			},
-		}
-
-		return books.NewGetBooksOK().WithPayload(booksList)
+		return books.NewGetBooksOK().WithPayload(backend.DummyBooksList())
 	})
 
 	api.ServerShutdown = func() {}
