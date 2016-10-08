@@ -1,0 +1,68 @@
+swagger: '2.0'
+info:
+  title: revised API
+  description: Data API for revised-web.herokuapp.com
+  version: "1.0.0"
+host: revised-server.herokuapp.com
+schemes:
+  - http
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /books:
+    get:
+      summary: Books
+      description: |
+        The Books endpoint returns information about the books with
+        available data on reVISed.
+      tags:
+        - Books
+      responses:
+        200:
+          description: An array of books
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Book'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Book:
+    type: object
+    properties:
+      book_id:
+        type: number
+        description: Unique identifier for the book.
+      title:
+        type: string
+        description: Book title.
+      author:
+        type: string
+        description: Book author.
+      resources:
+        type: array
+        items:
+          $ref: '#/definitions/Resource'
+  Resource:
+    type: object
+    properties:
+      resource_type:
+        type: string
+        description: The type of resource
+        # TODO - enum for these?
+      text:
+        type: string
+        description: The text describing this resource
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
