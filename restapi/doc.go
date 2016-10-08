@@ -5,7 +5,6 @@ Data API for revised-web.herokuapp.com
 
     Schemes:
       http
-      https
     Host: revised-server.herokuapp.com
     BasePath: /v1
     Version: 1.0.0

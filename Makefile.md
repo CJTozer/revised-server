@@ -15,3 +15,11 @@
     * `go get -u github.com/kardianos/govendor`
 * Gather up all the dependencies:
     * `govendor fetch`
+
+## Test Heroku locally
+
+* Install `heroku`:
+    * Installer linked [here](https://devcenter.heroku.com/articles/heroku-command-line)
+* Run locally:
+    * *Commit changes*
+    * `heroku local web`
