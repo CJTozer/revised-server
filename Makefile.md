@@ -7,8 +7,7 @@
 * Install `go-swagger`:
     * `go get -u github.com/go-swagger/go-swagger/cmd/swagger`
 * Generate the server:
-    *  `swagger generate server -f .\swagger.yaml --skip-support`
-    *  or just `go generate`
+    *  `go generate`
 
 ## Update dependencies
 

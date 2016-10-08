@@ -16,6 +16,7 @@ import (
 	"github.com/go-openapi/swag"
 
 	"revised-server/restapi/operations/books"
+	"revised-server/restapi/operations/resources"
 )
 
 // NewRevisedAPI creates a new Revised instance
@@ -46,6 +47,8 @@ type RevisedAPI struct {
 
 	// BooksGetBooksHandler sets the operation handler for the get books operation
 	BooksGetBooksHandler books.GetBooksHandler
+	// ResourcesGetResourcesHandler sets the operation handler for the get resources operation
+	ResourcesGetResourcesHandler resources.GetResourcesHandler
 
 	// ServeError is called when an error is received, there is a default handler
 	// but you can set your own with this
@@ -111,6 +114,10 @@ func (o *RevisedAPI) Validate() error {
 
 	if o.BooksGetBooksHandler == nil {
 		unregistered = append(unregistered, "books.GetBooksHandler")
+	}
+
+	if o.ResourcesGetResourcesHandler == nil {
+		unregistered = append(unregistered, "resources.GetResourcesHandler")
 	}
 
 	if len(unregistered) > 0 {
@@ -199,6 +206,11 @@ func (o *RevisedAPI) initHandlerCache() {
 		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
 	}
 	o.handlers["GET"]["/books"] = books.NewGetBooks(o.context, o.BooksGetBooksHandler)
+
+	if o.handlers["GET"] == nil {
+		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
+	}
+	o.handlers["GET"]["/resources"] = resources.NewGetResources(o.context, o.ResourcesGetResourcesHandler)
 
 }
 

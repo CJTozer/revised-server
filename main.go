@@ -12,7 +12,10 @@ import (
 	"revised-server/restapi/operations"
 )
 
-//go:generate swagger generate server --spec swagger.yaml
+// For swagger generation, it always overrides restapi/configure_revised.go, which we don't want
+// to happen.  After much ado, simplest workaround is just to revert that file.
+//go:generate swagger generate server --spec swagger.yaml --exclude-main
+//go:generate git checkout -- restapi/configure_revised.go
 
 func main() {
 	swaggerSpec, err := loads.Analyzed(restapi.SwaggerJSON, "")
