@@ -23,3 +23,8 @@
 * Run locally:
     * *Commit changes*
     * `heroku local web`
+
+## Formatting
+
+* `gofmt -w .\restapi\configure_revised.go`
+* `gofmt -w .\main.go`
