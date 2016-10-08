@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"strconv"
 
 	loads "github.com/go-openapi/loads"
 	flags "github.com/jessevdk/go-flags"
@@ -22,6 +23,11 @@ func main() {
 
 	api := operations.NewRevisedAPI(swaggerSpec)
 	server := restapi.NewServer(api)
+	port, err := strconv.Atoi(os.Getenv("PORT"))
+	if err != nil {
+		log.Fatalln(err)
+	}
+	server.Port = port
 	defer server.Shutdown()
 
 	parser := flags.NewParser(server, flags.Default)
