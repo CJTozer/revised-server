@@ -31,5 +31,30 @@ return []*models.Resource{
             ResourceType: "Link",
             Text: "Resource E",
         },
+        &models.Resource{
+            ResourceID: 6,
+            ResourceType: "Link",
+            Text: "Resource F",
+        },
+        &models.Resource{
+            ResourceID: 7,
+            ResourceType: "Link",
+            Text: "Resource G",
+        },
+        &models.Resource{
+            ResourceID: 8,
+            ResourceType: "Link",
+            Text: "Resource H",
+        },
+        &models.Resource{
+            ResourceID: 9,
+            ResourceType: "Link",
+            Text: "Resource I",
+        },
+        &models.Resource{
+            ResourceID: 10,
+            ResourceType: "Link",
+            Text: "Resource J",
+        },
     }
 }
