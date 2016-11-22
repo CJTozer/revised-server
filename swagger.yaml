@@ -22,9 +22,12 @@ paths:
         200:
           description: An array of books
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Book'
+            type: object
+            properties:
+              books:
+                type: array
+                items:
+                  $ref: '#/definitions/Book'
         default:
           description: Unexpected error
           schema:

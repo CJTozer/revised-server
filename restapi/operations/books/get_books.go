@@ -6,6 +6,8 @@ package books
 import (
 	"net/http"
 
+	"revised-server/models"
+
 	middleware "github.com/go-openapi/runtime/middleware"
 )
 
@@ -54,4 +56,17 @@ func (o *GetBooks) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 
 	o.Context.Respond(rw, r, route.Produces, route, res)
 
+}
+
+/*GetBooksOKBody get books o k body
+
+swagger:model GetBooksOKBody
+*/
+type GetBooksOKBody struct {
+
+	/* books
+
+	Required: true
+	*/
+	Books []*models.Book `json:"books"`
 }

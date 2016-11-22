@@ -41,7 +41,8 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 	// Get the full list of books
 	api.BooksGetBooksHandler = books.GetBooksHandlerFunc(func(params books.GetBooksParams) middleware.Responder {
 		// Dummy response for now
-		return books.NewGetBooksOK().WithPayload(backend.DummyBooksList())
+		rspPayload := books.GetBooksOKBody {backend.DummyBooksList()}
+		return books.NewGetBooksOK().WithPayload(rspPayload)
 	})
 
 	// Get the full list of resources

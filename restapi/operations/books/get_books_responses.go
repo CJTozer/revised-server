@@ -18,7 +18,7 @@ swagger:response getBooksOK
 type GetBooksOK struct {
 
 	// In: body
-	Payload []*models.Book `json:"body,omitempty"`
+	Payload GetBooksOKBody `json:"body,omitempty"`
 }
 
 // NewGetBooksOK creates GetBooksOK with default headers values
@@ -27,13 +27,13 @@ func NewGetBooksOK() *GetBooksOK {
 }
 
 // WithPayload adds the payload to the get books o k response
-func (o *GetBooksOK) WithPayload(payload []*models.Book) *GetBooksOK {
+func (o *GetBooksOK) WithPayload(payload GetBooksOKBody) *GetBooksOK {
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get books o k response
-func (o *GetBooksOK) SetPayload(payload []*models.Book) {
+func (o *GetBooksOK) SetPayload(payload GetBooksOKBody) {
 	o.Payload = payload
 }
 
