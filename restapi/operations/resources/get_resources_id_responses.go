@@ -18,7 +18,7 @@ swagger:response getResourcesIdOK
 type GetResourcesIDOK struct {
 
 	// In: body
-	Payload *models.Resource `json:"body,omitempty"`
+	Payload GetResourcesIDOKBody `json:"body,omitempty"`
 }
 
 // NewGetResourcesIDOK creates GetResourcesIDOK with default headers values
@@ -27,13 +27,13 @@ func NewGetResourcesIDOK() *GetResourcesIDOK {
 }
 
 // WithPayload adds the payload to the get resources Id o k response
-func (o *GetResourcesIDOK) WithPayload(payload *models.Resource) *GetResourcesIDOK {
+func (o *GetResourcesIDOK) WithPayload(payload GetResourcesIDOKBody) *GetResourcesIDOK {
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get resources Id o k response
-func (o *GetResourcesIDOK) SetPayload(payload *models.Resource) {
+func (o *GetResourcesIDOK) SetPayload(payload GetResourcesIDOKBody) {
 	o.Payload = payload
 }
 
@@ -41,11 +41,10 @@ func (o *GetResourcesIDOK) SetPayload(payload *models.Resource) {
 func (o *GetResourcesIDOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
 
 	rw.WriteHeader(200)
-	if o.Payload != nil {
-		if err := producer.Produce(rw, o.Payload); err != nil {
-			panic(err) // let the recovery middleware deal with this
-		}
+	if err := producer.Produce(rw, o.Payload); err != nil {
+		panic(err) // let the recovery middleware deal with this
 	}
+
 }
 
 /*GetResourcesIDDefault Unexpected error

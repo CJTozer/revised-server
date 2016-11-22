@@ -18,7 +18,7 @@ swagger:response getResourcesOK
 type GetResourcesOK struct {
 
 	// In: body
-	Payload []*models.Resource `json:"body,omitempty"`
+	Payload GetResourcesOKBody `json:"body,omitempty"`
 }
 
 // NewGetResourcesOK creates GetResourcesOK with default headers values
@@ -27,13 +27,13 @@ func NewGetResourcesOK() *GetResourcesOK {
 }
 
 // WithPayload adds the payload to the get resources o k response
-func (o *GetResourcesOK) WithPayload(payload []*models.Resource) *GetResourcesOK {
+func (o *GetResourcesOK) WithPayload(payload GetResourcesOKBody) *GetResourcesOK {
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the get resources o k response
-func (o *GetResourcesOK) SetPayload(payload []*models.Resource) {
+func (o *GetResourcesOK) SetPayload(payload GetResourcesOKBody) {
 	o.Payload = payload
 }
 

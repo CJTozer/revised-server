@@ -44,9 +44,12 @@ paths:
         200:
           description: An array of resources
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Resource'
+            type: object
+            properties:
+              resources:
+                type: array
+                items:
+                  $ref: '#/definitions/Resource'
         default:
           description: Unexpected error
           schema:
@@ -68,7 +71,10 @@ paths:
         200:
           description: The requested resource
           schema:
-            $ref: '#/definitions/Resource'
+            type: object
+            properties:
+              resource:
+                $ref: '#/definitions/Resource'
         default:
           description: Unexpected error
           schema:

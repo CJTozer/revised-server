@@ -41,14 +41,15 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 	// Get the full list of books
 	api.BooksGetBooksHandler = books.GetBooksHandlerFunc(func(params books.GetBooksParams) middleware.Responder {
 		// Dummy response for now
-		rspPayload := books.GetBooksOKBody {backend.DummyBooksList()}
+		rspPayload := books.GetBooksOKBody{backend.DummyBooksList()}
 		return books.NewGetBooksOK().WithPayload(rspPayload)
 	})
 
 	// Get the full list of resources
 	api.ResourcesGetResourcesHandler = resources.GetResourcesHandlerFunc(func(params resources.GetResourcesParams) middleware.Responder {
 		// Dummy response for now
-		return resources.NewGetResourcesOK().WithPayload(backend.DummyResourcesList())
+		rspPayload := resources.GetResourcesOKBody{backend.DummyResourcesList()}
+		return resources.NewGetResourcesOK().WithPayload(rspPayload)
 	})
 
 	// Get the resource with a specific ID
@@ -56,7 +57,8 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 		// Dummy response for now
 		resList := backend.DummyResourcesList()
 		if params.ID - 1 <= int64(len(resList)) {
-			return resources.NewGetResourcesIDOK().WithPayload(resList[params.ID - 1])
+			rspPayload := resources.GetResourcesIDOKBody{resList[params.ID - 1]}
+			return resources.NewGetResourcesIDOK().WithPayload(rspPayload)
 		}
 		return resources.NewGetResourcesIDDefault(404)
 	})

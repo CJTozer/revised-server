@@ -6,6 +6,8 @@ package resources
 import (
 	"net/http"
 
+	"revised-server/models"
+
 	middleware "github.com/go-openapi/runtime/middleware"
 )
 
@@ -52,4 +54,17 @@ func (o *GetResourcesID) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 
 	o.Context.Respond(rw, r, route.Produces, route, res)
 
+}
+
+/*GetResourcesIDOKBody get resources ID o k body
+
+swagger:model GetResourcesIDOKBody
+*/
+type GetResourcesIDOKBody struct {
+
+	/* resource
+
+	Required: true
+	*/
+	Resource *models.Resource `json:"resource"`
 }
