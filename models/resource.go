@@ -17,7 +17,7 @@ type Resource struct {
 
 	/* The resource's ID
 	 */
-	ResourceID int64 `json:"resource_id,omitempty"`
+	ID int64 `json:"id,omitempty"`
 
 	/* The type of resource
 	 */

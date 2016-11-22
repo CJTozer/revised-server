@@ -22,7 +22,7 @@ type Book struct {
 
 	/* Unique identifier for the book.
 	 */
-	BookID int64 `json:"book_id,omitempty"`
+	ID int64 `json:"id,omitempty"`
 
 	/* IDs for resources linked to this book.
 	 */

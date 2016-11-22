@@ -7,52 +7,52 @@ import (
 func DummyResourcesList() []*models.Resource {
 return []*models.Resource{
         &models.Resource{
-            ResourceID: 1,
+            ID: 1,
             ResourceType: "Link",
             Text: "Resource A",
         },
         &models.Resource{
-            ResourceID: 2,
+            ID: 2,
             ResourceType: "Link",
             Text: "Resource B",
         },
         &models.Resource{
-            ResourceID: 3,
+            ID: 3,
             ResourceType: "Link",
             Text: "Resource C",
         },
         &models.Resource{
-            ResourceID: 4,
+            ID: 4,
             ResourceType: "Link",
             Text: "Resource D",
         },
         &models.Resource{
-            ResourceID: 5,
+            ID: 5,
             ResourceType: "Link",
             Text: "Resource E",
         },
         &models.Resource{
-            ResourceID: 6,
+            ID: 6,
             ResourceType: "Link",
             Text: "Resource F",
         },
         &models.Resource{
-            ResourceID: 7,
+            ID: 7,
             ResourceType: "Link",
             Text: "Resource G",
         },
         &models.Resource{
-            ResourceID: 8,
+            ID: 8,
             ResourceType: "Link",
             Text: "Resource H",
         },
         &models.Resource{
-            ResourceID: 9,
+            ID: 9,
             ResourceType: "Link",
             Text: "Resource I",
         },
         &models.Resource{
-            ResourceID: 10,
+            ID: 10,
             ResourceType: "Link",
             Text: "Resource J",
         },
