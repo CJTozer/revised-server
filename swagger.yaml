@@ -32,6 +32,31 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
+  /books/{id}:
+    get:
+      summary: Books
+      description: Returns the single book with the matching ID.
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the book to get
+          required: true
+          type: integer
+          minimum: 1
+      tags:
+        - Books
+      responses:
+        200:
+          description: The requested book
+          schema:
+            type: object
+            properties:
+              resource:
+                $ref: '#/definitions/Book'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
   /resources:
     get:
       summary: Resources

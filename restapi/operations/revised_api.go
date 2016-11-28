@@ -47,6 +47,8 @@ type RevisedAPI struct {
 
 	// BooksGetBooksHandler sets the operation handler for the get books operation
 	BooksGetBooksHandler books.GetBooksHandler
+	// BooksGetBooksIDHandler sets the operation handler for the get books ID operation
+	BooksGetBooksIDHandler books.GetBooksIDHandler
 	// ResourcesGetResourcesHandler sets the operation handler for the get resources operation
 	ResourcesGetResourcesHandler resources.GetResourcesHandler
 	// ResourcesGetResourcesIDHandler sets the operation handler for the get resources ID operation
@@ -116,6 +118,10 @@ func (o *RevisedAPI) Validate() error {
 
 	if o.BooksGetBooksHandler == nil {
 		unregistered = append(unregistered, "books.GetBooksHandler")
+	}
+
+	if o.BooksGetBooksIDHandler == nil {
+		unregistered = append(unregistered, "books.GetBooksIDHandler")
 	}
 
 	if o.ResourcesGetResourcesHandler == nil {
@@ -212,6 +218,11 @@ func (o *RevisedAPI) initHandlerCache() {
 		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
 	}
 	o.handlers["GET"]["/books"] = books.NewGetBooks(o.context, o.BooksGetBooksHandler)
+
+	if o.handlers["GET"] == nil {
+		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
+	}
+	o.handlers["GET"]["/books/{id}"] = books.NewGetBooksID(o.context, o.BooksGetBooksIDHandler)
 
 	if o.handlers["GET"] == nil {
 		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
