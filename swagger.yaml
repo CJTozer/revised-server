@@ -51,7 +51,7 @@ paths:
           schema:
             type: object
             properties:
-              resource:
+              book:
                 $ref: '#/definitions/Book'
         default:
           description: Unexpected error

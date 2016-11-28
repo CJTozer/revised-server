@@ -62,9 +62,9 @@ swagger:model GetBooksIDOKBody
 */
 type GetBooksIDOKBody struct {
 
-	/* resource
+	/* book
 
 	Required: true
 	*/
-	Resource *models.Book `json:"resource"`
+	Book *models.Book `json:"book"`
 }
