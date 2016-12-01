@@ -19,6 +19,10 @@ swagger:model Resource
 */
 type Resource struct {
 
+	/* Summary of this resourcec
+	 */
+	Description string `json:"description,omitempty"`
+
 	/* The resource's ID
 	 */
 	ID int64 `json:"id,omitempty"`
@@ -27,7 +31,7 @@ type Resource struct {
 	 */
 	ResourceType string `json:"resource_type,omitempty"`
 
-	/* The text describing this resource
+	/* The details of this resource
 	 */
 	Text string `json:"text,omitempty"`
 }

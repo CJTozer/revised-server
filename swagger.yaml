@@ -135,9 +135,12 @@ definitions:
           - Text
           - Link
           - Image
+      description:
+        type: string
+        description: Summary of this resourcec
       text:
         type: string
-        description: The text describing this resource
+        description: The details of this resource
   Error:
     type: object
     properties:
