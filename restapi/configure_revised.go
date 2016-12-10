@@ -18,8 +18,6 @@ import (
 
 // This file is safe to edit. Once it exists it will not be overwritten
 
-//go:generate swagger generate server --target .. --name  --spec ..\swagger.yaml
-
 func configureFlags(api *operations.RevisedAPI) {
 	// api.CommandLineOptionsGroups = []swag.CommandLineOptionsGroup{ ... }
 }
@@ -37,6 +35,8 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 	api.JSONConsumer = runtime.JSONConsumer()
 
 	api.JSONProducer = runtime.JSONProducer()
+
+	// === GET REQUESTS ===
 
 	// Get the full list of books
 	api.BooksGetBooksHandler = books.GetBooksHandlerFunc(func(params books.GetBooksParams) middleware.Responder {
@@ -72,6 +72,13 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 			return resources.NewGetResourcesIDOK().WithPayload(rspPayload)
 		}
 		return resources.NewGetResourcesIDDefault(404)
+	})
+
+	// === POST REQUESTS ===
+
+	// Post a new book
+	api.BooksPostBooksHandler = books.PostBooksHandlerFunc(func(params books.PostBooksParams) middleware.Responder {
+		return middleware.NotImplemented("operation books.PostBooks has not yet been implemented")
 	})
 
 	api.ServerShutdown = func() {}
