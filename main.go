@@ -16,6 +16,7 @@ import (
 // to happen.  After much ado, simplest workaround is just to copy the original back afterwards.
 //go:generate cp restapi/configure_revised.go restapi/configure_revised.go.pregenerate
 //go:generate swagger generate server --spec swagger.yaml --exclude-main
+//go:generate mv restapi/configure_revised.go restapi/configure_revised.autogen.go
 //go:generate mv restapi/configure_revised.go.pregenerate restapi/configure_revised.go
 
 func main() {
