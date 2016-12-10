@@ -61,8 +61,8 @@ func main() {
 	}
 	server.Port, err = strconv.Atoi(port)
 	if err != nil {
-        log.Fatalln(err)
-    }
+		log.Fatalln(err)
+	}
 	server.Host = ""
 	if err := server.Serve(); err != nil {
 		log.Fatalln(err)
