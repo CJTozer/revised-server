@@ -1,1 +1,4 @@
 /*.sublime-*
+
+# Autogen file not committed (but contains useful info after `go generate` for new methods)
+/restapi/configure_revised.autogen.go
