@@ -12,7 +12,7 @@ produces:
 paths:
   /books:
     get:
-      summary: Books
+      summary: Get books
       description: |
         The Books endpoint returns information about the books with
         available data on reVISed.
@@ -32,6 +32,26 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
+    post:
+      summary: Create a new book
+      description: Create an entry for a new book.
+      tags:
+        - Books
+      parameters:
+        - name: book
+          in: body
+          description: The book JSON you want to post
+          schema:
+            $ref: '#/definitions/Book'
+          required: true
+      responses:
+        200:
+          description: The created book
+          schema:
+            type: object
+            properties:
+              book:
+                $ref: '#/definitions/Book'
   /books/{id}:
     get:
       summary: Books

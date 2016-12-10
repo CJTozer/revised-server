@@ -41,14 +41,14 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 	// Get the full list of books
 	api.BooksGetBooksHandler = books.GetBooksHandlerFunc(func(params books.GetBooksParams) middleware.Responder {
 		// Dummy response for now
-		rspPayload := books.GetBooksOKBody{backend.DummyBooksList()}
+		rspPayload := books.GetBooksOKBody{backend.DummyBooksList}
 		return books.NewGetBooksOK().WithPayload(rspPayload)
 	})
 
 	// Get the book with a specific ID
 	api.BooksGetBooksIDHandler = books.GetBooksIDHandlerFunc(func(params books.GetBooksIDParams) middleware.Responder {
 		// Dummy response for now
-		booksList := backend.DummyBooksList()
+		booksList := backend.DummyBooksList
 		if params.ID - 1 <= int64(len(booksList)) {
 			rspPayload := books.GetBooksIDOKBody{booksList[params.ID - 1]}
 			return books.NewGetBooksIDOK().WithPayload(rspPayload)

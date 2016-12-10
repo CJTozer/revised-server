@@ -31,7 +31,7 @@ func NewGetBooks(ctx *middleware.Context, handler GetBooksHandler) *GetBooks {
 
 /*GetBooks swagger:route GET /books Books getBooks
 
-Books
+Get books
 
 The Books endpoint returns information about the books with
 available data on reVISed.

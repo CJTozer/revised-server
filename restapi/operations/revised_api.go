@@ -53,6 +53,8 @@ type RevisedAPI struct {
 	ResourcesGetResourcesHandler resources.GetResourcesHandler
 	// ResourcesGetResourcesIDHandler sets the operation handler for the get resources ID operation
 	ResourcesGetResourcesIDHandler resources.GetResourcesIDHandler
+	// BooksPostBooksHandler sets the operation handler for the post books operation
+	BooksPostBooksHandler books.PostBooksHandler
 
 	// ServeError is called when an error is received, there is a default handler
 	// but you can set your own with this
@@ -130,6 +132,10 @@ func (o *RevisedAPI) Validate() error {
 
 	if o.ResourcesGetResourcesIDHandler == nil {
 		unregistered = append(unregistered, "resources.GetResourcesIDHandler")
+	}
+
+	if o.BooksPostBooksHandler == nil {
+		unregistered = append(unregistered, "books.PostBooksHandler")
 	}
 
 	if len(unregistered) > 0 {
@@ -233,6 +239,11 @@ func (o *RevisedAPI) initHandlerCache() {
 		o.handlers[strings.ToUpper("GET")] = make(map[string]http.Handler)
 	}
 	o.handlers["GET"]["/resources/{id}"] = resources.NewGetResourcesID(o.context, o.ResourcesGetResourcesIDHandler)
+
+	if o.handlers["POST"] == nil {
+		o.handlers[strings.ToUpper("POST")] = make(map[string]http.Handler)
+	}
+	o.handlers["POST"]["/books"] = books.NewPostBooks(o.context, o.BooksPostBooksHandler)
 
 }
 
