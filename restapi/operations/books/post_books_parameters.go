@@ -4,14 +4,11 @@ package books
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"io"
 	"net/http"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/runtime/middleware"
-
-	"revised-server/models"
 )
 
 // NewPostBooksParams creates a new PostBooksParams object
@@ -31,10 +28,9 @@ type PostBooksParams struct {
 	HTTPRequest *http.Request
 
 	/*The book JSON you want to post
-	  Required: true
 	  In: body
 	*/
-	Book *models.Book
+	Book PostBooksBody
 }
 
 // BindRequest both binds and validates a request, it assumes that complex things implement a Validatable(strfmt.Registry) error interface
@@ -45,26 +41,16 @@ func (o *PostBooksParams) BindRequest(r *http.Request, route *middleware.Matched
 
 	if runtime.HasBody(r) {
 		defer r.Body.Close()
-		var body models.Book
+		var body PostBooksBody
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
-				res = append(res, errors.Required("book", "body"))
-			} else {
-				res = append(res, errors.NewParseError("book", "body", "", err))
-			}
-
+			res = append(res, errors.NewParseError("book", "body", "", err))
 		} else {
-			if err := body.Validate(route.Formats); err != nil {
-				res = append(res, err)
-			}
 
 			if len(res) == 0 {
-				o.Book = &body
+				o.Book = body
 			}
 		}
 
-	} else {
-		res = append(res, errors.Required("book", "body"))
 	}
 
 	if len(res) > 0 {

@@ -56,6 +56,19 @@ func (o *PostBooks) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 
 }
 
+/*PostBooksBody post books body
+
+swagger:model PostBooksBody
+*/
+type PostBooksBody struct {
+
+	/* book
+
+	Required: true
+	*/
+	Book *models.Book `json:"book"`
+}
+
 /*PostBooksOKBody post books o k body
 
 swagger:model PostBooksOKBody

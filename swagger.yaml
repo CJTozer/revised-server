@@ -44,7 +44,10 @@ paths:
           in: body
           description: The book JSON you want to post
           schema:
-            $ref: '#/definitions/Book'
+            type: object
+            properties:
+              book:
+                $ref: '#/definitions/Book'
           required: true
       responses:
         200:
