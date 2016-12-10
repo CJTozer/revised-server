@@ -78,7 +78,8 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 
 	// Post a new book
 	api.BooksPostBooksHandler = books.PostBooksHandlerFunc(func(params books.PostBooksParams) middleware.Responder {
-		return middleware.NotImplemented("operation books.PostBooks has not yet been implemented")
+		rspPayload := books.PostBooksOKBody{params.Book}
+		return books.NewPostBooksOK().WithPayload(rspPayload)
 	})
 
 	api.ServerShutdown = func() {}
