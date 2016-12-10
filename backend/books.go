@@ -25,7 +25,7 @@ var DummyBooksList = []*models.Book{
     },
 }
 
-func GetNextID() int64 {
+func GetNextBookID() int64 {
     var nextID int64 = 1
     for _, book := range DummyBooksList {
         if book.ID >= nextID {

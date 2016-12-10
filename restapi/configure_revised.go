@@ -78,6 +78,9 @@ func configureAPI(api *operations.RevisedAPI) http.Handler {
 
 	// Post a new book
 	api.BooksPostBooksHandler = books.PostBooksHandlerFunc(func(params books.PostBooksParams) middleware.Responder {
+		// Set the ID, save the new book and return it
+		params.Book.Book.ID = backend.GetNextBookID()
+		backend.DummyBooksList = append(backend.DummyBooksList, params.Book.Book)
 		rspPayload := books.PostBooksOKBody{params.Book.Book}
 		return books.NewPostBooksOK().WithPayload(rspPayload)
 	})
