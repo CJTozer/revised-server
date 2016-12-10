@@ -53,11 +53,15 @@ func main() {
 	server.ConfigureAPI()
 
 	// Serve the API as directed by the environment (and don't specify the host)
-	port, err := strconv.Atoi(os.Getenv("PORT"))
-	if err != nil {
-		log.Fatalln(err)
+	port := os.Getenv("PORT")
+	// Default port to 3000
+	if port == "" {
+		port = "3000"
 	}
-	server.Port = port
+	server.Port, err = strconv.Atoi(port)
+	if err != nil {
+        log.Fatalln(err)
+    }
 	server.Host = ""
 	if err := server.Serve(); err != nil {
 		log.Fatalln(err)
