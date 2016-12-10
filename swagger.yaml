@@ -37,6 +37,8 @@ paths:
       description: Create an entry for a new book.
       tags:
         - Books
+      consumes:
+        - application/json
       parameters:
         - name: book
           in: body
