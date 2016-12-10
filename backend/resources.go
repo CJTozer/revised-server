@@ -22,7 +22,7 @@ return []*models.Resource{
             ID: 3,
             ResourceType: "Image",
             Description: "A picture of a book",
-            Text: "http://2.bp.blogspot.com/-S8IeK4SBo5A/Vf_OtsUuPOI/AAAAAAAAF3s/E8iJVa-OlTA/s1600/file000514157119.jpg",
+            Text: "https://2.bp.blogspot.com/-S8IeK4SBo5A/Vf_OtsUuPOI/AAAAAAAAF3s/E8iJVa-OlTA/s1600/file000514157119.jpg",
         },
         &models.Resource{
             ID: 4,
